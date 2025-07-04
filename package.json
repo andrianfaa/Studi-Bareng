@@ -9,7 +9,7 @@
     },
     "scripts": {
         "start": "node ./build/start.js",
-        "dev": "cross-env NODE_ENV=\"dev\" nodemon ./start.ts",
+        "dev": "cross-env NODE_ENV=\"development\" nodemon ./start.ts",
         "build": "tsc -p ./tsconfig.json",
         "lint": "eslint \"./**/*.ts\"",
         "lint:fix": "eslint \"./**/*.ts\" --fix"
