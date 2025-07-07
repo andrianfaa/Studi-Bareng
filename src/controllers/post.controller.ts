@@ -59,7 +59,7 @@ export const createPost = async (req: Request, res: Response) => {
         const post = await createPostService({
             title,
             content,
-            expiresAt,
+            expiresAt: expiresAt ?? undefined,
             authorId: id
         });
 
