@@ -53,7 +53,7 @@ export const authenticateUser = async (
             id: user.id,
             email: user.email,
             token: crypto
-                .createHash("sha256")
+                .createHmac("sha256", process.env.PASSWORD_SECRET || "")
                 .update(
                     JSON.stringify({
                         email: user.email,
