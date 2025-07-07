@@ -19,11 +19,6 @@ export const jwtMiddleware =
         try {
             const user = verifyJwt<AuthenticatedUserResponse>(token);
 
-            console.log({
-                "Token didapatkan": token,
-                "User": user
-            });
-
             if (!user) {
                 return res.sendResponse("error", 401, {
                     message: "Invalid token"
@@ -31,8 +26,6 @@ export const jwtMiddleware =
             }
 
             const authorizedUser = await checkToken(user.id, user.token);
-
-            console.log("Authorized user : ", authorizedUser);
 
             if (!authorizedUser) {
                 return res.sendResponse("error", 401, {
